@@ -1,0 +1,42 @@
+.target-box{
+    position: absolute;
+    width: 631px;
+    height: 600px;
+    left: 89px;
+    top: 77px;
+  
+    background: #FFFBFB;
+    box-shadow: -5px 4px 50px rgba(0, 0, 0, 0.38);
+    border-radius: 9px;
+}
+
+h1{
+    top: 10px;
+    position: relative;
+    text-align: center;
+
+}
+
+.title{
+    width: 80%;
+    height: 5%;
+    margin-left: 8%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.description{
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize:vertical;
+}
+
+
+.button{
+    width: 15% !important;
+    height: 5% !important;
+    margin-left: 8% !important;
+    margin-right: 5% !important;
+}

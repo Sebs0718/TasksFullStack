@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './CreateNote.css';
 
 function CreateNote() {
 
@@ -34,21 +35,23 @@ function CreateNote() {
         const { data } = await axios.post("http://localhost:4000/api/task", obj);
         console.log(data);
         toast.success(data.message);
+        setInputValue('');
+        setTextValue('');
     } catch (error) {
         console.log(error)
     };
   };
 
   return (
-    <div>
+    <div className="target-box">
         <ToastContainer 
             autoClose={2000}
         />
-      <h1>Soy el componentepara crear las notas</h1>
-      <input type="text" placeholder="Title" onChange={getValueInput} value={inputValue} />
-      <textarea placeholder="Descripcion" onChange={getValueText}></textarea>
-      <button onClick={getRamdonCat}>Generar</button>
-      <button onClick={handleClick}>Crear</button>
+      <h1>Create Task</h1>
+      <input type="text" placeholder="Title" onChange={getValueInput} value={inputValue} className="title" />
+      <textarea placeholder="Descripcion" onChange={getValueText} className="description" value={textValue}></textarea>
+      <button onClick={getRamdonCat} className="button">Phrase</button>
+      <button onClick={handleClick} className="button" >Save</button>
     </div>
   );
 }
