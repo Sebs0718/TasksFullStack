@@ -47,7 +47,7 @@ function CreateNote() {
         <ToastContainer 
             autoClose={2000}
         />
-      <h1>Create Task</h1>
+      <h1 className='h1'>Create Task</h1>
       <input type="text" placeholder="Title" onChange={getValueInput} value={inputValue} className="title" />
       <textarea placeholder="Descripcion" onChange={getValueText} className="description" value={textValue}></textarea>
       <button onClick={getRamdonCat} className="button">Phrase</button>
