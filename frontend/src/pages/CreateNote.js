@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
+import {Link} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './CreateNote.css';
 
@@ -43,15 +44,22 @@ function CreateNote() {
   };
 
   return (
-    <div className="target-box">
+    <div className="container">
+      <div className="card">
         <ToastContainer 
             autoClose={2000}
         />
-      <h1 className='h1'>Create Task</h1>
-      <input type="text" placeholder="Title" onChange={getValueInput} value={inputValue} className="title" />
-      <textarea placeholder="Descripcion" onChange={getValueText} className="description" value={textValue}></textarea>
-      <button onClick={getRamdonCat} className="button">Phrase</button>
-      <button onClick={handleClick} className="button" >Save</button>
+        <h1 className='h1'>Create Task</h1>
+        <div className="form-group mx-5 col-xs-10 col-sm-10 col-md-11 col-lg-11 mt-4 mb-2">
+          <input type="text" placeholder="Title" onChange={getValueInput} value={inputValue} className="form-control mb-2" />
+          <textarea placeholder="Description" onChange={getValueText} className="form-control description" value={textValue}></textarea>
+        </div>
+        <div className="input-group mx-5">
+          <button onClick={getRamdonCat} className="btn btn-primary btn-sm mx-1"><i class="fas fa-cat"></i></button>
+          <button onClick={handleClick} className="btn btn-success btn-sm mx-1" ><i class="far fa-save"></i></button>
+          <button className="btn btn-danger mx-1"><Link to="/all-notes"><i class="far fa-window-close"></i></Link></button>
+        </div>
+      </div>
     </div>
   );
 }
