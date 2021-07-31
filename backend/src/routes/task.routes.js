@@ -43,10 +43,8 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    const { title, description } = req.body;
-    const newTask = { title, description };
-    await Task.findOneAndUpdate(req.params.id, newTask);
-    res.json({ message: "Task Updated" });
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body,{new:true});
+    res.json({ updatedTask });
   } catch (error) {
     res.json({message:"Task could not be updated"})
   }
@@ -64,7 +62,7 @@ router.put("/completed/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    await Task.findByIdAndRemove(req.params.id);
+    await Task.findByIdAndDelete(req.params.id);
     res.json({ message: "Task Deleted" });
   } catch (error) {
     res.json({message:"Task could not be delete"})

@@ -44,3 +44,8 @@ button{
   background-color: #06a75c !important;
   border-color: #06a75c !important;
 }
+
+.input-group .btn{
+  position: relative !important;
+  z-index: 0 !important;
+}

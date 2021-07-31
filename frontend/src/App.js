@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Route path='/create-note' component={CreateNote}/>
-      <Route path='/all-notes' component={AllNotes}/>
+      <Route path='/' exact component={AllNotes}/>
     </Router>
   );
 }

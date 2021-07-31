@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 //connecting to db
-mongoose.connect('mongodb://localhost/toDo')
+mongoose.connect('mongodb://localhost/Dbtasks')
     .then(db => console.log('connected'))
     .catch(err => console.log(err));
 

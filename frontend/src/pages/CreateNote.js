@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './CreateNote.css';
 
@@ -9,6 +9,7 @@ function CreateNote() {
 
   const [inputValue, setInputValue] = useState("");
   const [textValue, setTextValue] = useState("");
+  const history = useHistory();
 
   const getRamdonCat = async ()=>{
     try {
@@ -38,6 +39,7 @@ function CreateNote() {
         toast.success(data.message);
         setInputValue('');
         setTextValue('');
+        history.push('/');
     } catch (error) {
         console.log(error)
     };
